@@ -1,0 +1,91 @@
+# Edit these colors and fonts however you like.
+style "default"
+{
+  GtkOptionMenu::indicator_spacing = { 3, 2, 1, 1 }
+  GtkEntry::progress-border = { 1, 1, 1, 1 }
+  GtkRange::slider_width = 11
+  GtkRange::stepper_size = 11
+  GtkScrollbar::min_slider_length = 14
+  GtkCheckButton::indicator_size = 10
+  GtkCheckMenuItem::indicator_size = 10
+  GtkButton::default_border = { 0, 0, 0, 0 }
+
+  fg[NORMAL]        = "#BED4E6"
+  fg[ACTIVE]        = "#BED4E6"
+  fg[PRELIGHT]      = "#BED4E6"
+  fg[SELECTED]      = "#BED4E6"
+  fg[INSENSITIVE]   = "#747474"
+  bg[NORMAL]        = "#09131C"
+  bg[ACTIVE]        = "#0E1E2B"
+  bg[PRELIGHT]      = "#0E1E2B"
+  bg[SELECTED]      = "#09131C"
+  bg[INSENSITIVE]   = "#09131C"
+  base[NORMAL]      = "#0E1E2B"
+  base[ACTIVE]      = "#09131C"
+  base[PRELIGHT]    = "#0E1E2B"
+  base[SELECTED]    = "#09131C"
+  base[INSENSITIVE] = "#0E1E2B"
+  text[NORMAL]      = "#BED4E6"
+  text[ACTIVE]      = "#BED4E6"
+  text[PRELIGHT]    = "#BED4E6"
+  text[SELECTED]    = "#BED4E6"
+  text[INSENSITIVE] = "#747474"
+
+  #font_name = "Sans 10"
+  engine "thinice"
+  {
+    # Do you want the scrollbar handles rectangular or a bit shaped?
+    rect_scrollbar = FALSE
+
+    # The following variables are semi-generic, can be applied to
+    # different widget classes etc..
+
+    # Mark type 1 is used on scrollbar handles, handleboxes etc
+    # Can be: NOTHING, SLASH, INVSLASH, DOT, INVDOT
+    mark_type1 = SLASH
+
+    # Mark type 2 is used on scrollbar buttons
+    # Can be: NOTHING, SLASH, INVSLASH, DOT, INVDOT, ARROW
+    mark_type2 = ARROW
+
+    # How to draw paned stuff
+    # Can be: NONE, SOME (currently 5), FULL
+    paned_dots = SOME
+  }
+}
+
+style "tooltips" {
+  bg[NORMAL] = "#EEE1B3"
+  fg[NORMAL] = "#09131C"
+}
+
+style "progress-bar" {
+  bg[PRELIGHT] = "#09131C"
+  fg[PRELIGHT] = "#BED4E6"
+  bg[NORMAL]   = "#BED4E6"
+}
+
+style "menu-item" {
+  bg[PRELIGHT]   = "#09131C"
+  fg[PRELIGHT]   = "#BED4E6"
+  base[PRELIGHT] = "#09131C"
+  text[PRELIGHT] = "#BED4E6"
+}
+
+style "entry" {
+  bg[SELECTED] = "#C9D2F5"
+  fg[SELECTED] = "#09131C"
+}
+
+class "GtkWidget" style "default"
+widget "gtk-tooltip*" style "tooltips"
+class "GtkProgressBar" style "progress-bar"
+class "*MenuItem*" style "menu-item"
+class "GtkEntry" style "entry"
+widget_class "*MenuItem*" style "menu-item"
+widget_class "*.GtkAccelMenuItem.*" style "menu-item"
+widget_class "*.GtkRadioMenuItem.*" style "menu-item"
+widget_class "*.GtkCheckMenuItem.*" style "menu-item"
+widget_class "*.GtkImageMenuItem.*" style "menu-item"
+widget_class "*.GtkSeparatorMenuItem.*" style "menu-item"
+widget_class "*.GtkRadioMenuItem.*" style "menu-item"
